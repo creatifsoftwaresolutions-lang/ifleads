@@ -1,0 +1,33 @@
+:root {
+  /* iF LEADS brand (sampled from official logo: red rgb(231,29,51), black rgb(2,2,2)) */
+  --brand-primary: #e71d33;
+  --brand-primary-hover: #c5162b;
+  --brand-primary-press: #a91224;
+  --brand-secondary: #050505;
+  --brand-accent: #fd3a4b;
+  --brand-light: #fdebed;
+  --brand-light-border: #f6c1c8;
+
+  /* Text + surfaces */
+  --brand-dark: #050505;
+  --brand-text: #050505;
+  --brand-muted: #5f6368;
+  --brand-border: #e6e3e4;
+  --brand-background: #faf8f8;
+
+  /* Semantic */
+  --danger: #b42318;
+  --wa: #1faa59;
+  --hot: #e8590c;
+  --success: #137a4b;
+  --r: 12px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(5, 5, 5, .04);
+  --shadow-md: 0 4px 12px rgba(5, 5, 5, .08);
+  --shadow-lg: 0 10px 40px rgba(5, 5, 5, .08);
+  --shadow-modal: 0 8px 30px rgba(5, 5, 5, .22);
+
+  /* Typography */
+  --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}

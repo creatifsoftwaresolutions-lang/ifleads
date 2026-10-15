@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Base ─── */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--brand-background);
+  color: var(--brand-text);
+  font-size: 15px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 2px;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--brand-border);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-muted);
+}
+
+/* ─── Nav item (sidebar) ─── */
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: var(--brand-text);
+  font-weight: 500;
+  font-size: 14px;
+  transition: background var(--transition-fast);
+  text-decoration: none;
+}
+
+.nav-item:hover:not(.active) {
+  background: var(--brand-light);
+}
+
+.nav-item.active {
+  background: var(--brand-primary);
+  color: #fff;
+}
+
+/* ─── Skeleton ─── */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--brand-border) 0%,
+    #f1f1f1 50%,
+    var(--brand-border) 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+/* ─── Icon button (Call / WhatsApp) ─── */
+.ic-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--brand-border);
+  background: #fff;
+  display: inline-grid;
+  place-items: center;
+  padding: 0;
+  transition: background var(--transition-fast);
+}
+
+.ic-btn:hover:not(:disabled) {
+  background: var(--brand-light);
+}
+
+.ic-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.ic-btn.call {
+  color: var(--brand-text);
+}
+
+.ic-btn.wa {
+  color: var(--wa);
+}
+
+/* ─── Toast ─── */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* ─── Login page base ─── */
+.login-page {
+  background: #ffffff;
+  min-height: 100vh;
+}
+
+/* Smooth autofill — Chrome paints autofilled inputs yellow by default */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 30px #fafafa inset !important;
+  -webkit-text-fill-color: #050505 !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 30px #ffffff inset !important;
+}
